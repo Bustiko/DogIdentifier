@@ -79,6 +79,7 @@
                         <outlet property="descriptionLabel" destination="uYi-GW-bEa" id="fI8-IT-0M1"/>
                         <outlet property="dogBreedLabel" destination="yMl-vy-O41" id="RGy-pT-OnM"/>
                         <outlet property="imageView" destination="Wmj-Nd-0fH" id="R9B-xu-MrC"/>
+                        <outlet property="photo" destination="7qe-EW-boD" id="7zC-v6-6GL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnJ-CV-pRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

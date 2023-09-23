@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var camera: UIBarButtonItem!
     
+    @IBOutlet weak var photo: UIBarButtonItem!
+    
+    
     lazy var classificationRequest: VNCoreMLRequest = {
         do {
             let model = try VNCoreMLModel(for: MyDogsImageClassifier(configuration: MLModelConfiguration()).model)
@@ -54,7 +57,7 @@ class ViewController: UIViewController {
         photoSourceAlert.addAction(choosePhoto)
         photoSourceAlert.addAction(cancel)
         
-        photoSourceAlert.popoverPresentationController?.barButtonItem = camera
+        photoSourceAlert.popoverPresentationController?.barButtonItem = photo
         
         present(photoSourceAlert, animated: true)
         
@@ -94,8 +97,8 @@ class ViewController: UIViewController {
     //MARK: - performing Request
     
     func classify(image: UIImage) {
-        dogBreedLabel.text = "Classifying..."
-        
+        dogBreedLabel.text = "Identifying..."
+    
         let orientation = CGImagePropertyOrientation(image.imageOrientation)
         guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
         
@@ -113,7 +116,6 @@ class ViewController: UIViewController {
     
     func processObservations(for request: VNRequest, error: Error?) {
         DispatchQueue.main.async {
-            self.descriptionLabel.text = ""
             if let results = request.results as? [VNClassificationObservation] {
                 if results.isEmpty {
                     self.dogBreedLabel.text = "Nothing found :/"
@@ -138,7 +140,11 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         picker.dismiss(animated: true)
         
         let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as! UIImage
+        
         imageView.image = image
+       
+        descriptionLabel.text = ""
+        
         classify(image: image)
     }
 }
