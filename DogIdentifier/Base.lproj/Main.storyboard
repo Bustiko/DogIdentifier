@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZeT-bl-NUn">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
@@ -14,26 +14,17 @@
             <objects>
                 <viewController id="ZeT-bl-NUn" customClass="ViewController" customModule="DogIdentifier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="odc-bv-OMh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ready to identify!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="yMl-vy-O41">
-                                <rect key="frame" x="20" y="89" width="374" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ready to identify!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="yMl-vy-O41">
+                                <rect key="frame" x="16" y="89" width="361" height="35"/>
                                 <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="30"/>
                                 <color key="textColor" red="0.75294117650000003" green="0.50980392159999999" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="take or upload a dog photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYi-GW-bEa">
-                                <rect key="frame" x="20" y="132" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.73910907302239925" green="0.66077428586828735" blue="0.51653703216297708" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkN-3d-9Lr">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkN-3d-9Lr">
+                                <rect key="frame" x="0.0" y="788" width="393" height="49"/>
                                 <items>
                                     <barButtonItem image="camera.fill" catalog="system" id="hPi-Zl-ims">
                                         <color key="tintColor" red="0.75294117650000003" green="0.57466893009999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,16 +35,42 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Cmd-xj-wYa"/>
                                     <barButtonItem image="photo.fill" catalog="system" id="7qe-EW-boD">
                                         <color key="tintColor" red="0.75294117650000003" green="0.57466893009999997" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="photoPressed:" destination="ZeT-bl-NUn" id="yZg-00-7Ga"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" red="0.97254901960784312" green="0.94117647058823528" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="maltese" translatesAutoresizingMaskIntoConstraints="NO" id="Wmj-Nd-0fH">
-                                <rect key="frame" x="0.0" y="180" width="414" height="618"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brownDog" translatesAutoresizingMaskIntoConstraints="NO" id="Wmj-Nd-0fH">
+                                <rect key="frame" x="0.0" y="151" width="393" height="618"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="618" id="f4z-Ne-3ak"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="take or upload a dog photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYi-GW-bEa">
+                                <rect key="frame" x="16" y="122" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.73910907302239925" green="0.66077428586828735" blue="0.51653703216297708" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9NP-7S-XhU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9NP-7S-XhU" firstAttribute="trailing" secondItem="uYi-GW-bEa" secondAttribute="trailing" constant="16" id="0je-3I-eAM"/>
+                            <constraint firstItem="9NP-7S-XhU" firstAttribute="trailing" secondItem="yMl-vy-O41" secondAttribute="trailing" constant="16" id="333-O2-XaL"/>
+                            <constraint firstItem="yMl-vy-O41" firstAttribute="top" secondItem="9NP-7S-XhU" secondAttribute="top" constant="30" id="47E-n7-Gg5"/>
+                            <constraint firstItem="Wmj-Nd-0fH" firstAttribute="top" secondItem="uYi-GW-bEa" secondAttribute="bottom" constant="8" id="Ade-Vo-q0U"/>
+                            <constraint firstAttribute="bottom" secondItem="nkN-3d-9Lr" secondAttribute="bottom" constant="15" id="Eqz-Ai-wAn"/>
+                            <constraint firstItem="yMl-vy-O41" firstAttribute="leading" secondItem="9NP-7S-XhU" secondAttribute="leading" constant="16" id="Y4k-bM-csM"/>
+                            <constraint firstAttribute="trailing" secondItem="nkN-3d-9Lr" secondAttribute="trailing" id="cfe-eA-pDF"/>
+                            <constraint firstItem="Wmj-Nd-0fH" firstAttribute="trailing" secondItem="9NP-7S-XhU" secondAttribute="trailing" id="gLw-V2-J7g"/>
+                            <constraint firstItem="Wmj-Nd-0fH" firstAttribute="leading" secondItem="9NP-7S-XhU" secondAttribute="leading" id="hrz-Fm-j6Q"/>
+                            <constraint firstItem="nkN-3d-9Lr" firstAttribute="leading" secondItem="odc-bv-OMh" secondAttribute="leading" id="ocj-1E-hNX"/>
+                            <constraint firstItem="uYi-GW-bEa" firstAttribute="leading" secondItem="9NP-7S-XhU" secondAttribute="leading" constant="16" id="rOu-ea-LhF"/>
+                            <constraint firstItem="nkN-3d-9Lr" firstAttribute="top" secondItem="Wmj-Nd-0fH" secondAttribute="bottom" constant="19" id="xEI-RC-pGs"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -66,12 +83,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnJ-CV-pRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-837.68115942028987" y="-94.419642857142847"/>
+            <point key="canvasLocation" x="-838.93129770992368" y="-95.070422535211279"/>
         </scene>
     </scenes>
     <resources>
+        <image name="brownDog" width="2858" height="3867"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
-        <image name="maltese" width="500" height="333"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

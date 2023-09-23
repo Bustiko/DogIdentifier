@@ -34,11 +34,31 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
     }
     
     
     //MARK: - pictures
+    
+    
+    @IBAction func photoPressed(_ sender: Any) {
+        
+        let photoSourceAlert = UIAlertController()
+        
+        let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
+            self.presentPhotoPicker(sourceType: .photoLibrary)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        
+        photoSourceAlert.addAction(choosePhoto)
+        photoSourceAlert.addAction(cancel)
+        
+        photoSourceAlert.popoverPresentationController?.barButtonItem = camera
+        
+        present(photoSourceAlert, animated: true)
+        
+    }
     
     
     @IBAction func cameraPressed(_ sender: Any) {
@@ -48,13 +68,10 @@ class ViewController: UIViewController {
         let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { [unowned self] _ in
             self.presentPhotoPicker(sourceType: .camera)
         }
-        let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
-            self.presentPhotoPicker(sourceType: .photoLibrary)
-        }
+        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         photoSourceAlert.addAction(takePhoto)
-        photoSourceAlert.addAction(choosePhoto)
         photoSourceAlert.addAction(cancel)
         
         photoSourceAlert.popoverPresentationController?.barButtonItem = camera
